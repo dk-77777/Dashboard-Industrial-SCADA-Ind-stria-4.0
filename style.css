@@ -1,0 +1,38 @@
+body {
+    font-family: Consolas, monospace;
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    margin: 30px auto;
+    width: 500px;
+    background: #374151;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+input, select, button {
+    padding: 10px;
+    margin: 10px;
+}
+
+#mensagem {
+    color: red;
+}
+
+.alerta {
+    color: orange;
+    font-weight: bold;
+}
+
+.perigo {
+    color: red;
+    font-weight: bold;
+}
+
+.normal {
+    color: limegreen;
+    font-weight: bold;
+}
