@@ -1,74 +1,109 @@
 function validarAcesso() {
+
     let nome = document.getElementById("nomeOperador").value;
     let mensagem = document.getElementById("mensagem");
 
-    if (nome === "") {
-        mensagem.textContent = "Digite o nome do operador!";
-    } else {
-        mensagem.textContent = "";
-        document.getElementById("painel").style.display = "block";
+    if(nome === ""){
+
+        mensagem.innerText = "Digite o nome do operador!";
+
+    }else{
+
+        mensagem.innerText = "Acesso liberado!";
+        mensagem.style.color = "lime";
+
+        document.getElementById("painel")
+        .classList.remove("d-none");
+
         gerarListaMaquinas();
     }
 }
 
-function gerarListaMaquinas() {
-    let select = document.getElementById("maquinas");
+function gerarListaMaquinas(){
 
-    if (select.options.length > 1) return;
+    const select =
+    document.getElementById("listaMaquinas");
 
-    for (let i = 1; i <= 5; i++) {
-        let option = document.createElement("option");
+    if(select.options.length > 0){
+        return;
+    }
+
+    for(let i=1; i<=5; i++){
+
+        let option =
+        document.createElement("option");
+
         option.value = i;
-        option.textContent = "Máquina " + i;
+        option.text =
+        "Máquina " + i;
+
         select.appendChild(option);
     }
 }
 
-function verificarStatus() {
-    let maquina = document.getElementById("maquinas").value;
-    let status = document.getElementById("statusMaquina");
+function verificarStatus(){
 
-    switch (maquina) {
+    const maquina =
+    document.getElementById("listaMaquinas").value;
+
+    const status =
+    document.getElementById("statusMaquina");
+
+    switch(maquina){
+
         case "1":
-            status.textContent = "Em operação";
+            status.innerText = "Em operação";
             break;
+
         case "2":
-            status.textContent = "Manutenção necessária";
+            status.innerText = "Manutenção necessária";
             break;
+
         case "3":
-            status.textContent = "Desligada";
+            status.innerText = "Desligada";
             break;
+
         case "4":
-            status.textContent = "Operando normalmente";
+            status.innerText = "Operando normalmente";
             break;
+
         case "5":
-            status.textContent = "Aguardando produção";
+            status.innerText = "Aguardando produção";
             break;
-        default:
-            status.textContent = "";
     }
 }
 
-function monitorarSensor() {
-    let temperatura = Math.floor(Math.random() * 101);
+function monitorarSensor(){
 
-    let visor = document.getElementById("temperatura");
-    let situacao = document.getElementById("situacao");
+    let temperatura =
+    Math.floor(Math.random() * 101);
 
-    visor.textContent = temperatura + "°C";
+    let visor =
+    document.getElementById("temperatura");
 
-    situacao.className = "";
+    let situacao =
+    document.getElementById("situacao");
 
-    if (temperatura < 50) {
-        situacao.textContent = "Normal";
+    visor.innerText =
+    temperatura + "°C";
+
+    situacao.className = "badge";
+
+    if(temperatura < 50){
+
+        situacao.innerText = "Normal";
         situacao.classList.add("normal");
-    }
-    else if (temperatura <= 80) {
-        situacao.textContent = "Alerta";
+
+    }else if(temperatura <= 80){
+
+        situacao.innerText = "Alerta";
         situacao.classList.add("alerta");
-    }
-    else {
-        situacao.textContent = "PERIGO - SUPERAQUECIMENTO";
+
+    }else{
+
+        situacao.innerText =
+        "PERIGO - SUPERAQUECIMENTO";
+
         situacao.classList.add("perigo");
     }
 }

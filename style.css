@@ -1,38 +1,57 @@
-body {
-    font-family: Consolas, monospace;
-    background-color: #1f2937;
-    color: white;
-    text-align: center;
+body{
+    background: linear-gradient(180deg,#121212,#1e1e1e);
+    min-height:100vh;
+    font-family:'Segoe UI',sans-serif;
 }
 
-.container {
-    margin: 30px auto;
-    width: 500px;
-    background: #374151;
-    padding: 20px;
-    border-radius: 10px;
+.card{
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+    border-color:#00bfff !important;
 }
 
-input, select, button {
-    padding: 10px;
-    margin: 10px;
+.card-header{
+    border-color:#00bfff !important;
 }
 
-#mensagem {
-    color: red;
+#temperatura{
+    color:#00bfff;
+    text-shadow:0 0 15px rgba(0,191,255,.6);
 }
 
-.alerta {
-    color: orange;
-    font-weight: bold;
+.text-primary{
+    color:#00bfff !important;
 }
 
-.perigo {
-    color: red;
-    font-weight: bold;
+.btn-primary{
+    background-color:#00bfff !important;
+    border-color:#00bfff !important;
+    font-weight:bold;
 }
 
-.normal {
-    color: limegreen;
-    font-weight: bold;
+.btn-primary:hover{
+    background-color:#0099cc !important;
+    border-color:#0099cc !important;
+    transform:scale(1.02);
+}
+
+.border-primary{
+    border-color:#00bfff !important;
+}
+
+.normal{
+    background-color:green !important;
+}
+
+.alerta{
+    background-color:orange !important;
+}
+
+.perigo{
+    background-color:red !important;
+    font-weight:bold;
+}
+
+#mensagem{
+    color:red;
+    font-weight:bold;
 }
